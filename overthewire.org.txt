@@ -1,0 +1,174 @@
+-----------------------LINUX_BASIC_HACKING-------------------------------------------
+>>level 0""
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+# bandit0 bandit0
+
+>>level 1""
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+# cat readme	
+
+>>level 2""
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+# cat ./-
+
+>>level 3""
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+# cat "space in the file"
+
+>>level 4""
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+# cat .hidden
+
+>>level 5""
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+# for x in {0..9}; do file ./-file0$x; done
+
+>>level 6""
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+# ls -laR | grep rw-r | grep 1033
+OR 
+# find -type f -size 1033c ! -executable
+
+>>level 7""
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+# find / -user bandit7 -group bandit6
+
+>>level 8 ""
+cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+# cat data.txt |grep
+
+>>level 9 ""
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+# cat data.txt |less|sort|uniq -u
+
+>>level 10 ""	
+truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+# cat data.txt | strings |grep '='
+
+>>level 11 ""
+IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+# cat data.txt |base64 --decode
+ 
+>>level 12 ""
+5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+# cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+
+>>level 13 ""
+8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+# "xxd -r data.txt > bandit"
+# gzip ,bz2 -d ,tzr -xf
+
+--------------------SSH_HACKING-------------------------------------
+>>level 14 ""
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+# ssh -i sshkey.private username@localhost
+
+>>level 15 ""
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+# nc localhost 3000
+
+>>level 16 ""
+cluFn7wTiGryunymYOu4RcffSxQluehd
+# openssl s_client -connect localhost:30001
+
+>>level  17 ""
+xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+#login through rsa.key file
+# nmap -sC -sV -sS localhost -p 31000-32000
+# openssl s_client -connect localhost:31790 >/tmp/bandit17.key
+# found 2 file compare with diff password.new password.old
+# but both have no password password sved in /etc/pass_ban	
+
+>>level 18 ""
+kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+#diff password.old password.new
+#logout
+
+>>level 19 ""
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+#for stay use force 
+#ssh -T bandit18@localhost 
+
+>>level 20 ""
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+#./filename(stat file to check) cat /etc/file
+
+>>level 21 ""
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+# netcat -lvcp 1337 1st instatnce 
+# ./suconnect 1337 (2nd instance )
+
+>>level 22 ""
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+# strings /tmp/xbcugcuiwehciowecoiew
+
+---------------------SCRIPTING_METHOD----------------------------
+>> level 23 ""
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+# by changing script perameters
+
+>> level 24 ""
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+#create a script 
+#   cat path > /tmp/filename
+ 
+>> level 25 ""
+uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+#cat pass.txt |nc localhost 30002 > final.txt
+# sort -u final.txt
+"script"
+##!/bin/bash
+#for i in {0000..9999}; do 
+#    echo $(cat /etc/bandit_pass/bandit24) $i >> pass.txt
+#done
+
+>>level 26 ""
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+#tricky by smalling the win/terminal
+----To get proper shell------- 
+##set shell=/bin/bash 
+#shell
+
+>>level 27 ""
+3ba3118a22e93127a4ed485be72ef5ea
+##old method 
+# ./filename cat /etc/bandit_pass/bandit27
+
+--------------------------GIT_LAB_HACKING-------------------------------------------
+>>level 28 ""
+0ef186ac70e04ea33b4c1853d2526fa2
+##simple clone github repo 
+
+>>level 29 ""
+bbc96594b4e001778eee9975372716b2
+##git clone
+##git log (checking the log for git)
+##git show (here we go )
+
+>>level 30 ""
+5b90576bedb2cc04c86a9e924ce42faf
+## tricky 
+# git branch 
+##git checkout 
+##git log (then here we go)
+
+
+>>level 31 ""
+47e603bb428404d265f59c42920d81e5
+##ls -lta
+## cd .git 
+##string * (here we go)
+
+>>level 32 ""
+56a9bf19c63d650ce78e6ec0354ee45e
+##git add (a file key.txt which is under WAF)
+##git commit 
+##git push origin master
+
+>>level 33 ""
+c9c3199ddf4121b10cf581a98d51caee
+##---tricky to intrect with shell $0 and then strings /etc/../..---
+##alternatve 
+----or use script by making #!/bin/bash ;bash------
+
+------------------------------TO_BE_CONTINUE(25-10-2021)--------------------------------
